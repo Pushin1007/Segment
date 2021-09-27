@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,32 +19,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculateSegments(View view) {
 
+        EditText numSeg = findViewById(R.id.numSeg);
+        EditText diamEdit = findViewById(R.id.diamEdit);
+        EditText widthEdit = findViewById(R.id.widthEdit);
+
+
+        Double a=0.0; //угол сегмента в радианах
+        Double aGrad=0.0; //угол сегмента в градусах
+        Double l=0.0; // длина сегмента
+        Double h=0.0; //высота сегмента
+        Double r= Double.parseDouble(String.valueOf(diamEdit.getText())) / 2;
+
+        aGrad = 360/Double.parseDouble(String.valueOf(numSeg.getText()));
+
+        a = aGrad * (Math.PI / 180);
+        l = 2 * Math.tan(a / 2) * r;
+        h = r - (r - Double.parseDouble(String.valueOf(widthEdit.getText()))) * Math.cos(a / 2);
+
+        TextView angleCalc = findViewById(R.id.angleCalc);
+        TextView lengthCalc = findViewById(R.id.lengthCalc);
+        TextView widthCalc = findViewById(R.id.widthCalc);
+
+        //str = new DecimalFormat("#.0#").format(d)
+
+        angleCalc.setText(new DecimalFormat("#.0#").format(aGrad));
+        lengthCalc.setText(new DecimalFormat("#.0#").format(l));
+        widthCalc.setText(new DecimalFormat("#.0#").format(h));
+
+
 
     }
 }
-//public class Segment_Calculator {
-//    public static void main(String[] args) {
-//        double a = 30 * (3.14 / 180);
-//        double r = 50;
-//        double b = 10;
-//
-//        segment(30, 100, 10);
-//        segment(30, 150, 10);
-//
-//    }
-//
-//    public static void segment(double a, double d, double b) {
-//        double l;
-//        double h;
-//        double r = d / 2;
-//        System.out.printf("Количесто сегментов = %.0f \nДиаметр кольца = %.1fмм \nТолщина кольца = %.1fмм \n ", (360 / a), d, b);
-//        a = a * (Math.PI / 180);
-//        l = 2 * Math.tan(a / 2) * r;
-//        System.out.printf("Длина сегмента = %.1fмм \n ", l);
-//        h = r - (r - b) * Math.cos(a / 2);
-//        System.out.printf("Высота сегмента = %.1fмм \n ", h);
-//        System.out.println();
-//    }
-//
-//
-//}

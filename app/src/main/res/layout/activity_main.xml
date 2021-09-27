@@ -32,7 +32,7 @@
         android:id="@+id/numSeg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -88,43 +88,71 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Segment length, мм"
-        app:layout_constraintEnd_toStartOf="@+id/widthCalc"
-        app:layout_constraintHorizontal_bias="0.557"
+        android:layout_marginStart="84dp"
+        android:text="Angle, мм"
+        app:layout_constraintBottom_toBottomOf="@+id/angleCalc"
+        app:layout_constraintEnd_toStartOf="@+id/angleCalc"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/widthCalc"
+        app:layout_constraintTop_toTopOf="@+id/angleCalc"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/angleCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="36dp"
+        android:ems="5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Segment length, мм"
+        app:layout_constraintBottom_toBottomOf="@+id/lengthCalc"
+        app:layout_constraintEnd_toStartOf="@+id/widthCalc"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/angleCalc"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/lengthCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
         android:ems="5"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/widthCalc"
+        app:layout_constraintTop_toBottomOf="@+id/angleCalc"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Segment width, мм"
+        app:layout_constraintBottom_toBottomOf="@+id/widthCalc"
         app:layout_constraintEnd_toStartOf="@+id/lengthCalc"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lengthCalc"
+        app:layout_constraintTop_toBottomOf="@+id/lengthCalc"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/widthCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
         android:ems="5"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/lengthCalc"
         tools:ignore="MissingConstraints" />
 
 
